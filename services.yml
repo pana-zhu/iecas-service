@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   message-service:
-    image: hub.mooc.com:8080/micro-service/message-service:latest
+    image: hub.pana.com:8080/micro-service/message-service:latest
     deploy:
       endpoint_mode: dnsrr
       resources:
@@ -10,7 +10,7 @@ services:
           memory: "128M"
 
   user-service:
-    image: hub.mooc.com:8080/micro-service/user-service:latest
+    image: hub.pana.com:8080/micro-service/user-service:latest
     deploy:
       endpoint_mode: dnsrr
       resources:
@@ -19,7 +19,7 @@ services:
           memory: "512M"
 
   user-edge-service:
-    image: hub.mooc.com:8080/micro-service/user-edge-service:latest
+    image: hub.pana.com:8080/micro-service/user-edge-service:latest
     deploy:
       endpoint_mode: vip
       resources:
@@ -33,7 +33,7 @@ services:
       - message-service
 
   course-service:
-    image: hub.mooc.com:8080/micro-service/course-service:latest
+    image: hub.pana.com:8080/micro-service/course-service:latest
     deploy:
       endpoint_mode: dnsrr
       resources:
@@ -44,7 +44,7 @@ services:
       - user-service
 
   course-edge-service:
-    image: hub.mooc.com:8080/micro-service/course-edge-service:latest
+    image: hub.pana.com:8080/micro-service/course-edge-service:latest
     deploy:
       endpoint_mode: vip
       resources:
@@ -56,7 +56,7 @@ services:
     depends_on:
       - user-edge-service
   api-gateway:
-    image: hub.mooc.com:8080/micro-service/api-gateway-zuul:latest
+    image: hub.pana.com:8080/micro-service/api-gateway-zuul:latest
     deploy:
       endpoint_mode: vip
       resources:
@@ -72,4 +72,4 @@ services:
 networks:
   default:
     external:
-      name: imooc-overlay
+      name: pana-overlay

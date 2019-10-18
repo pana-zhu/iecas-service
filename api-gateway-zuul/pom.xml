@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.imooc</groupId>
+    <groupId>com.pana</groupId>
     <artifactId>api-gateway-zuul</artifactId>
     <version>1.0-SNAPSHOT</version>
 

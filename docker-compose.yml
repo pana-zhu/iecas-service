@@ -3,7 +3,7 @@ version: '3'
 networks:
   default:
     external:
-      name: imooc-network
+      name: pana-network
 
 services:
   message-service:
